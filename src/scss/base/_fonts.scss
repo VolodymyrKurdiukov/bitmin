@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+//font-family: 'Lato', sans-serif;
+font-size: calc(24px + 16 * ((100vw - 320px) / (1280 - 320)));
+
+SCSS Миксин:
+$maxWidth: 1280;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
