@@ -1,74 +1,187 @@
 .header {
-	position: absolute;
-	top: 35px;
+	// background-image: linear-gradient(45deg, #603fcd 0%, #4475dc 100%);
+	padding: 0px 15px;
+	position: fixed;
+	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 50;
+	z-index: 10;
+	background-color: red;
 	&__row {
+		min-height: 125px;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		height: 85px;
+		padding: 0px 45px;
+	}
+
+	&__column {
+		&:first-child {
+			flex: 0 0 20%;
+		}
+		flex: 1 1 auto;
+		&:last-child {
+			flex: 0 0 20%;
+		}
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	&__img {
+		max-width: 100%;
+	}
+
+	&__text {
+		color: #ffffff;
+		font-size: 26px;
+		line-height: 341.34%;
+		display: inline-block;
+		margin: 0px 0px 0px 10px;
 	}
 
 	&__menu {
 	}
 
-	&__logo {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 2;
+	&__actions {
 	}
 }
 .menu {
-	&__icon {
-	}
-
-	&__body {
-	}
-
 	&__list {
 		display: flex;
-		li {
-			position: relative;
-			padding: 0px 37.5px;
-			&:nth-child(2) {
-				padding: 0px 110px 0px 37.5px;
-			}
-			&:nth-child(3) {
-				padding: 0px 37.5px 0px 110px;
-			}
-			&:after {
-				content: '';
-				width: 2px;
-				height: 2px;
-				background-color: #4d4959;
-				border-radius: 50%;
-				position: absolute;
-				right: 0;
-				top: 50%;
-				margin: -1.5px 0px 0px 0px;
-			}
-			&:nth-child(2),
-			&:last-child {
-				&:after {
-					display: none;
-				}
-			}
-		}
+		justify-content: center;
+	}
+	&__sublist {
+		position: absolute;
+		top: 100%;
+		background-color: #000;
+		right: 0;
+		padding: 15px;
+		min-width: 200px;
+		transform: translate(0px, 10%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+		pointer-events: none;
 	}
 
+	&__item {
+		&:not(:last-child) {
+			@include adaptiv-value("margin-right", 45, 20, 0);
+		}
+		position: relative;
+	}
+	&__subitem {
+		&:not(:last-child) {
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+		}
+	}
 	&__link {
-		color: #4d4959;
-		font-size: 13px;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 2.6px;
-		text-decoration: none;
+		color: #ffffff;
+		font-weight: 600;
+		line-height: 375%;
+		display: block;
+		position: relative;
+		transition: all 0.3s ease;
+		&-arrow {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -100%);
+				right: -11px;
+				width: 6px;
+				height: 4px;
+				background: url("../img/icons/arrow_down.png") 0 0 no-repeat;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			width: 0;
+			height: 6px;
+			background-color: #fff;
+			border-radius: 5px;
+			bottom: 0;
+			transition: all 0.3s ease;
+		}
+	}
+	&__sublink {
+		color: #ffffff;
+		font-weight: 600;
+		line-height: 375%;
+		display: block;
+		position: relative;
+		transition: all 0.3s ease;
+		&-arrow {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -100%);
+				right: -11px;
+				width: 6px;
+				height: 4px;
+				background: url("../img/icons/arrow_down.png") 0 0 no-repeat;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			width: 0;
+			height: 6px;
+			background-color: #fff;
+			border-radius: 5px;
+			bottom: 0;
+			transition: all 0.3s ease;
+		}
 	}
 }
-.icon-menu {
-	display: none;
+.actions-header {
+	display: flex;
+	justify-content: flex-end;
+	> *:not(:last-child) {
+		@include adaptiv-value("margin-right", 12, 5, 0);
+	}
+
+	&__login,
+	&__register {
+		color: #ffffff;
+		font-size: 14px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+	&__login {
+		border-radius: 35px;
+		border: 2px solid #ffffff;
+		@include adaptiv-value("padding-top", 13, 5, 0);
+		@include adaptiv-value("padding-right", 30, 15, 0);
+		@include adaptiv-value("padding-left", 30, 15, 0);
+		@include adaptiv-value("padding-bottom", 13, 5, 0);
+	}
+	&__register {
+		box-shadow: 0 16px 28px rgba(37, 8, 116, 0.22);
+		border-radius: 35px;
+		background-color: #201375;
+		padding: 15px 30px 15px 48px;
+		@include adaptiv-value("padding-top", 15, 5, 0);
+		@include adaptiv-value("padding-right", 30, 15, 0);
+		@include adaptiv-value("padding-bottom", 15, 5, 0);
+		@include adaptiv-value("padding-left", 48, 15, 0);
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			@include adaptiv-value("left", 26, 3, 0);
+			width: 16px;
+			height: 12px;
+			background: url("../img/icons/register_icon.png") 0 0 no-repeat;
+		}
+	}
 }
