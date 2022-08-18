@@ -85,6 +85,6 @@ ibg();
 
 $(window).scroll(function () {
 	let top = $(document).scrollTop();
-	if (top < 30 || innerWidth < 1120) $(".header").css({ background: 'none', transition: ' all 0.5s ease' });
+	if (top < 30 || innerWidth < 1120) $(".header").css({ background: 'none', transition: ' all 0.3s ease' });
 	else $(".header").css({ background: 'rgba(0, 0, 0, 0.5)' });
 });
