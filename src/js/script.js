@@ -72,3 +72,19 @@ if (menuLinks.length > 0) {
 		}
 	}
 }
+
+function ibg() {
+	let ibg = document.querySelectorAll(".ibg");
+	for (var i = 0; i < ibg.length; i++) {
+		if (ibg[i].querySelector('img')) {
+			ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+		}
+	}
+}
+ibg();
+
+$(window).scroll(function () {
+	let top = $(document).scrollTop();
+	if (top < 30) $(".header").css({ background: 'none', transition: ' all 0.5s ease' });
+	else $(".header").css({ background: 'rgba(0, 0, 0, 0.5)' });
+});

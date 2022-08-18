@@ -1,0 +1,56 @@
+@media (any-hover: hover) {
+	.intro {
+		&__text{
+			&:hover {
+				transform: scale(1.07);
+			}
+		}
+		&__play{
+			&:hover {
+				transform: scale(1.07);
+			}
+		}
+	}
+}
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+	.intro {
+		&__play {
+			flex: 0 0 70px;
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+		}
+	}
+}
+
+@media (max-width: 767.98px) {
+	.intro {
+		&__play {
+			@include adaptiv-value("margin-right", 70, 30, 0);
+			@include adaptiv-value("margin-left", 70, 30, 0);
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.intro {
+		&__row {
+			flex-wrap: wrap;
+		}
+		&__text {
+			flex: 1 1 100%;
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 25, 10, 0);
+			}
+			
+		}
+		&__play {
+			order: 3;
+			@include adaptiv-value("margin-right", 0, 0, 0);
+			@include adaptiv-value("margin-left", 0, 0, 0);
+			@include adaptiv-value("margin-top", 40, 20, 0);
+		}
+	}
+}
