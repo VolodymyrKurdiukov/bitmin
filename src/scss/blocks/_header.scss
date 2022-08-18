@@ -1,14 +1,13 @@
 .header {
-	// background-image: linear-gradient(45deg, #603fcd 0%, #4475dc 100%);
 	padding: 0px 15px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 10;
-	background-color: red;
+	@include adaptiv-value("min-height", 125, 70, 0);
 	&__row {
-		min-height: 125px;
+		@include adaptiv-value("min-height", 125, 70, 0);
 		display: flex;
 		align-items: center;
 		padding: 0px 45px;
@@ -28,10 +27,13 @@
 		display: inline-flex;
 		align-items: center;
 		transition: all 0.3s ease;
+		position: relative;
+		z-index: 11;
 	}
 
 	&__img {
 		max-width: 100%;
+		margin: 0px 10px 0px 0px;
 	}
 
 	&__text {
@@ -39,7 +41,6 @@
 		font-size: 26px;
 		line-height: 341.34%;
 		display: inline-block;
-		margin: 0px 0px 0px 10px;
 	}
 
 	&__menu {
@@ -49,6 +50,9 @@
 	}
 }
 .menu {
+	&__icon {
+		display: none;
+	}
 	&__arrow {
 		position: absolute;
 		border: solid #fff;
@@ -88,18 +92,7 @@
 		display: block;
 		position: relative;
 		transition: all 0.3s ease;
-		&-arrow {
-			// &::before {
-			// 	content: "";
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	transform: translate(0, -100%);
-			// 	right: -11px;
-			// 	width: 6px;
-			// 	height: 4px;
-			// 	background: url("../img/icons/arrow_down.png") 0 0 no-repeat;
-			// }
-		}
+		
 		&::after {
 			content: "";
 			position: absolute;
@@ -159,6 +152,8 @@
 		font-size: 14px;
 		font-weight: 600;
 		transition: all 0.3s ease;
+		position: relative;
+		z-index: 11;
 	}
 	&__login {
 		border-radius: 35px;
@@ -176,7 +171,7 @@
 		@include adaptiv-value("padding-top", 15, 5, 0);
 		@include adaptiv-value("padding-right", 30, 15, 0);
 		@include adaptiv-value("padding-bottom", 15, 5, 0);
-		@include adaptiv-value("padding-left", 48, 15, 0);
+		@include adaptiv-value("padding-left", 48, 25, 0);
 		position: relative;
 		&::after {
 			content: "";

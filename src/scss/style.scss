@@ -19,6 +19,9 @@
 	margin: 0px auto;
 	padding: 0px 15px;
 }
+body.lock{
+	overflow: hidden
+}
 
 @import "blocks/header";
 @import "blocks/footer";
