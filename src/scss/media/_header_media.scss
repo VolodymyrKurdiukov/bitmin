@@ -179,6 +179,9 @@ body.touch .menu__list > .menu__item.active .menu__arrow {
 			}
 			&.active{
 				right: 0;
+				&::before{
+					background-color: rgba(0, 0, 0, 1);
+				}
 			}
 		}
 		&__list {
