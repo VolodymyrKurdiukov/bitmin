@@ -1,19 +1,18 @@
 @media (any-hover: hover) {
 	.intro {
-		&__text{
+		&__text {
 			&:hover {
 				transform: scale(1.07);
 			}
 		}
-		&__play{
+		&__play {
 			&:hover {
 				transform: scale(1.07);
 			}
 		}
 	}
 }
-@media (max-width: 1199.98px) {
-}
+
 @media (max-width: 991.98px) {
 	.intro {
 		&__play {
@@ -44,7 +43,6 @@
 			&:not(:last-child) {
 				@include adaptiv-value("margin-bottom", 25, 10, 0);
 			}
-			
 		}
 		&__play {
 			order: 3;
