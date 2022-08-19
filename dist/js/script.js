@@ -83,8 +83,21 @@ function ibg() {
 }
 ibg();
 
+
+$(document).ready(function () {
+	$('.price__row').slick({
+		slideToShow: 4,
+		arrows: false,
+		dots: true,
+		slidesToScroll: 1
+	});
+});
+
 $(window).scroll(function () {
 	let top = $(document).scrollTop();
 	if (top < 30 || innerWidth < 1120) $(".header").css({ background: 'none', transition: ' all 0.3s ease' });
 	else $(".header").css({ background: 'rgba(0, 0, 0, 0.5)' });
 });
+
+
+
