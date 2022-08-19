@@ -20,12 +20,20 @@
 	margin: 0px auto;
 	padding: 0px 15px;
 }
-body.lock{
-	overflow: hidden
+body.lock {
+	overflow: hidden;
+}
+
+.title {
+	@include adaptiv-value("font-size", 32, 24, 0);
+	line-height: 131.25%;
+	color: #2f2f33;
+	text-align: center;
 }
 
 @import "blocks/header";
 @import "blocks/intro";
+@import "blocks/price";
 @import "blocks/footer";
 
 @import "media/header_media";

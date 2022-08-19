@@ -59,6 +59,7 @@
 		@include adaptiv-value("top", 600, 200, 0);
 		left: 0;
 		z-index: -1;
+		pointer-events: none;
 	}
 	&__bg {
 		position: absolute;
