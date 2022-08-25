@@ -1,0 +1,68 @@
+@media (max-width: 1020.98px) {
+	.roadmap {
+		&__divider {
+			display: none;
+		}
+	}
+	.top-roadmap {
+		&__column {
+			&::before {
+				display: none;
+			}
+		}
+	}
+	.bottom-roadmap {
+		&__column {
+			flex: 0 0 33.333%;
+			&::before {
+				display: none;
+			}
+		}
+	}
+	.item-roadmap {
+		&__icon {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 934.98px) {
+	.top-roadmap {
+		flex-wrap: wrap;
+		margin-bottom: 0;
+		&__column {
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+			flex: 0 0 33.333%;
+		}
+	}
+	.bottom-roadmap {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 746.98px) {
+	.top-roadmap {
+		&__column {
+			flex: 0 0 50%;
+		}
+	}
+	.bottom-roadmap {
+		flex-wrap: wrap;
+		&__column {
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+			flex: 0 0 50%;
+		}
+	}
+}
+@media (max-width: 489.98px) {
+	.top-roadmap {
+		&__column {
+			flex: 0 0 100%;
+		}
+	}
+	.bottom-roadmap {
+		&__column {
+			flex: 0 0 100%;
+		}
+	}
+}

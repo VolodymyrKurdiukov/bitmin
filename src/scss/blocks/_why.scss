@@ -1,7 +1,6 @@
 .why {
 	@include adaptiv-value("padding-top", 90, 40, 0);
 	@include adaptiv-value("padding-right", 120, 15, 0);
-	@include adaptiv-value("padding-bottom", 90, 40, 0);
 	@include adaptiv-value("padding-left", 130, 15, 0);
 
 }
