@@ -1,6 +1,6 @@
 .price {
 	@include adaptiv-value("padding-top", 250, 50, 0);
-	@include adaptiv-value("padding-bottom", 250, 50, 0);
+	@include adaptiv-value("padding-bottom", 130, 50, 0);
 
 	&__header {
 		text-align: center;
@@ -11,12 +11,6 @@
 		@include adaptiv-value("margin-bottom", 20, 10, 0);
 	}
 
-	&__text {
-		line-height: 162.5%;
-		color: #9b9b9e;
-		max-width: 780px;
-		margin: 0px auto;
-	}
 
 	&__row {
 		display: flex;

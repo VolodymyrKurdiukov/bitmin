@@ -1,0 +1,42 @@
+@media (any-hover: hover) {
+	.promotions {
+		&__column {
+			&:hover {
+				transform: scale(1.05);
+				.promotions__text {
+					color: #83a5ff;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.promotions {
+		&__row {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&__column {
+			flex: 0 0 25%;
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+		}
+	}
+}
+@media (max-width: 991.98px) {
+	.promotions {
+		&__column {
+			flex: 0 0 50%;
+		}
+		&__video {
+			padding: 0px 0px 56.25% 0px;
+		}
+	}
+}
+@media (max-width: 575.98px) {
+	.promotions {
+		&__column {
+			flex: 0 0 100%;
+		}
+	}
+}
