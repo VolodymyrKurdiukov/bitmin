@@ -12,6 +12,7 @@
 		line-height: 120%;
 		color: #ffffff;
 		@include adaptiv-value("margin-bottom", 70, 30, 0);
+		text-align: center;
 	}
 
 	&__row {

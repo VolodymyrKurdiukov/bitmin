@@ -9,6 +9,7 @@
 
 	&__title {
 		@include adaptiv-value("margin-bottom", 20, 10, 0);
+		text-align: center;
 	}
 
 
