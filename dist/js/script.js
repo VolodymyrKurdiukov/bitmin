@@ -85,12 +85,42 @@ ibg();
 
 
 $(document).ready(function () {
-	$('.price__row').slick({
-		slideToShow: 4,
-		arrows: false,
-		dots: true,
-		slidesToScroll: 1
-	});
+	// $('.price__row').slick({
+	// 	slidesToShow: 4,
+	// 	arrows: false,
+	// 	dots: true,
+	// 	slidesToScroll: 1,
+	// });
+
+	$(".content-price__item-1").not(":first").hide();
+	$(".body-item-price .body-item-price__tab-1").click(function () {
+		$(".body-item-price .body-item-price__tab-1").removeClass("active").eq($(this).index()).addClass("active");
+		$(".content-price__item-1").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	$(".content-price__item-2").not(":first").hide();
+	$(".body-item-price .body-item-price__tab-2").click(function () {
+		$(".body-item-price .body-item-price__tab-2").removeClass("active").eq($(this).index()).addClass("active");
+		$(".content-price__item-2").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	$(".content-price__item-3").not(":first").hide();
+	$(".body-item-price .body-item-price__tab-3").click(function () {
+		$(".body-item-price .body-item-price__tab-3").removeClass("active").eq($(this).index()).addClass("active");
+		$(".content-price__item-3").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	$(".content-price__item-4").not(":first").hide();
+	$(".body-item-price .body-item-price__tab-4").click(function () {
+		$(".body-item-price .body-item-price__tab-4").removeClass("active").eq($(this).index()).addClass("active");
+		$(".content-price__item-4").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	$(".content-price__item-5").not(":first").hide();
+	$(".body-item-price .body-item-price__tab-5").click(function () {
+		$(".body-item-price .body-item-price__tab-5").removeClass("active").eq($(this).index()).addClass("active");
+		$(".content-price__item-5").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
 });
 
 $(window).scroll(function () {
