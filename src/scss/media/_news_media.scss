@@ -1,0 +1,30 @@
+@media (any-hover: hover) {
+	.news {
+		&__column {
+			&:hover {
+				transform: scale(1.05);
+				.item-news__text {
+					color: #83a5ff;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 575.98px) {
+	.news {
+		&__row {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 0 50%;
+		}
+	}
+}
+@media (max-width: 500.98px) {
+	.news {
+		&__column {
+			flex: 1 1 100%;
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+		}
+	}
+}
