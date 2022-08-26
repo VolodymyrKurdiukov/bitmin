@@ -197,6 +197,22 @@ if (isMobile.any()) {
 	document.body.classList.add('pc');
 }
 
+if (isMobile.any()) {
+	document.body.classList.add('touch');
+
+	let menuFooterArrows = document.querySelectorAll('.menu-footer__arrow');
+	if (menuFooterArrows.length > 0) {
+		for (let index = 0; index < menuFooterArrows.length; index++) {
+			const menuFooterArrow = menuFooterArrows[index];
+			menuFooterArrow.addEventListener("click", function (e) {
+				menuFooterArrow.parentElement.classList.toggle('active');
+			});
+		}
+	}
+} else {
+	document.body.classList.add('pc');
+}
+
 const iconMenu = document.querySelector(".menu__icon");
 if (iconMenu) {
 	const menuBody = document.querySelector(".menu__body");
@@ -226,6 +242,11 @@ if (menuLinks.length > 0) {
 		}
 	}
 }
+
+
+
+
+
 
 function ibg() {
 	let ibg = document.querySelectorAll(".ibg");

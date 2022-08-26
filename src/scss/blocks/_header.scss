@@ -107,18 +107,18 @@
 		transition: all 0.3s ease;
 		@include adaptiv-value("padding-bottom", 15, 5, 0);
 		text-align: center;
-		&-arrow {
-			&::before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				transform: translate(0, -100%);
-				right: -11px;
-				width: 6px;
-				height: 4px;
-				background: url("../img/icons/arrow_down.png") 0 0 no-repeat;
-			}
-		}
+		// &-arrow {
+		// 	&::before {
+		// 		content: "";
+		// 		position: absolute;
+		// 		top: 50%;
+		// 		transform: translate(0, -100%);
+		// 		right: -11px;
+		// 		width: 6px;
+		// 		height: 4px;
+		// 		background: url("../img/icons/arrow_down.png") 0 0 no-repeat;
+		// 	}
+		// }
 		&::after {
 			content: "";
 			position: absolute;
