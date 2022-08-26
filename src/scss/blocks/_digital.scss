@@ -1,0 +1,47 @@
+.digital {
+	@include adaptiv-value("padding-bottom", 110, 40, 0);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	&__header {
+		text-align: center;
+		@include adaptiv-value("margin-bottom", 65, 30, 0);
+	}
+
+	&__title {
+		@include adaptiv-value("font-size", 42, 24, 0);
+		@include adaptiv-value("margin-bottom", 24, 12, 0);
+		color: #2f2f33;
+		span {
+			color: #1676f2;
+		}
+	}
+
+	&__text {
+		@include adaptiv-value("font-size", 24, 14, 0);
+		line-height: 141.667%;
+		color: #9b9b9e;
+		max-width: 912px;
+		margin: 0px auto;
+	}
+
+	&__button {
+		@include adaptiv-value("margin-bottom", 35, 15, 0);
+	}
+
+	&__call {
+		display: block;
+		@include adaptiv-value("font-size", 24, 14, 0);
+		@include adaptiv-value("margin-bottom", 10, 5, 0);
+		font-weight: 600;
+		text-transform: uppercase;
+		color: #ef4350;
+	}
+
+	&__subtext {
+		font-size: 14px;
+		color: #9b9b9e;
+	}
+}
