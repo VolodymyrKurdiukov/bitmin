@@ -1,0 +1,14 @@
+@media (max-width: 767.98px) {
+	.item-started {
+		&__icon {
+			max-width: 80px;
+		}
+	}
+}
+@media (max-width: 661.98px) {
+	.started {
+		&__row {
+			display: block;
+		}
+	}
+}
