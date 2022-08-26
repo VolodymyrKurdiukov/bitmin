@@ -29,7 +29,11 @@
 			flex: 0 0 50%;
 		}
 		&__video {
-			padding: 0px 0px 56.25% 0px;
+			padding: 0px 0px 50% 0px;
+		}
+		&__text {
+			font-weight: 400;
+			max-width: 100%;
 		}
 	}
 }

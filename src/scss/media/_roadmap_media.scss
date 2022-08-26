@@ -5,14 +5,21 @@
 		}
 	}
 	.top-roadmap {
+		flex-wrap: wrap;
+		margin-bottom: 0;
 		&__column {
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
+			flex: 0 0 33.333%;
 			&::before {
 				display: none;
 			}
 		}
 	}
 	.bottom-roadmap {
+		display: none;
+		margin-top: 0;
 		&__column {
+			@include adaptiv-value("margin-bottom", 30, 15, 0);
 			flex: 0 0 33.333%;
 			&::before {
 				display: none;
@@ -26,19 +33,6 @@
 	}
 }
 
-@media (max-width: 934.98px) {
-	.top-roadmap {
-		flex-wrap: wrap;
-		margin-bottom: 0;
-		&__column {
-			@include adaptiv-value("margin-bottom", 30, 15, 0);
-			flex: 0 0 33.333%;
-		}
-	}
-	.bottom-roadmap {
-		margin-top: 0;
-	}
-}
 
 @media (max-width: 746.98px) {
 	.top-roadmap {
