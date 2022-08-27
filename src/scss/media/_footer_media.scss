@@ -39,11 +39,36 @@ body.touch .menu-footer__list > .menu-footer__item.active .menu-footer__sublist 
 body.touch .menu-footer__list > .menu-footer__item.active .menu-footer__arrow {
 	transform: rotate(-135deg);
 }
+@media (max-width: 814.98px) {
+	.bottom-footer {
+		flex-direction: column;
+		align-items: center;
+		&__column {
+			flex: 1 1 100%;
+			&:first-child {
+				@include adaptiv-value("margin-bottom", 40, 20, 0);
+			}
+		}
+	}
+}
 
 @media (max-width: 575.98px) {
 	.menu-footer {
 		&__list {
 			justify-content: center;
+		}
+	}
+}
+@media (max-width: 538px) {
+	.bottom-footer {
+		align-items: stretch;
+	}
+	.nav-footer {
+		flex-direction: column;
+		&__column {
+			&:not(:last-child) {
+				@include adaptiv-value("margin-bottom", 30, 15, 0);
+			}
 		}
 	}
 }

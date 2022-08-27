@@ -1,11 +1,12 @@
 .footer {
-	padding: 0px 0px 200px 0px;
+	@include adaptiv-value("padding-bottom", 130, 40, 0);
 	&__container {
 	}
 
 	&__top {
 	}
-
+	&__bottom {
+	}
 	&__menu {
 	}
 }
@@ -41,7 +42,7 @@
 	}
 }
 .menu-footer {
-	&__arrow{
+	&__arrow {
 		position: absolute;
 		border: solid #9b9b9e;
 		border-width: 0 1px 1px 0;
@@ -57,7 +58,7 @@
 		display: flex;
 		justify-content: flex-end;
 	}
-	&__sublist{
+	&__sublist {
 		transition: all 0.3s ease;
 		position: absolute;
 		top: 100%;
@@ -99,5 +100,79 @@
 		display: inline-block;
 		transition: all 0.3s ease;
 		text-align: right;
+	}
+}
+.bottom-footer {
+	display: flex;
+	justify-content: space-between;
+	@include adaptiv-value("padding-top", 50, 25, 0);
+	&__column {
+	}
+
+	&__nav {
+	}
+
+	&__rights {
+		font-size: 14px;
+		color: #9b9b9e;
+		span {
+			text-transform: uppercase;
+		}
+	}
+}
+.nav-footer {
+	display: flex;
+	&__column {
+		&:not(:last-child) {
+			@include adaptiv-value("margin-right", 100, 30, 0);
+		}
+	}
+
+	&__body {
+	}
+
+	&__title {
+		@include adaptiv-value("font-size", 18, 16, 0);
+		font-weight: 600;
+		color: #2f2f33;
+		@include adaptiv-value("margin-bottom", 40, 20, 0);
+	}
+
+	&__list {
+	}
+
+	&__item {
+		@include adaptiv-value("margin-bottom", 20, 10, 0);
+	}
+
+	&__link {
+		font-size: 14px;
+		color: #9b9b9e;
+	}
+}
+.nav-footer.init .nav-footer__title {
+	cursor: pointer;
+	@include adaptiv-value("padding-top", 10, 5, 0);
+	@include adaptiv-value("padding-right", 40, 10, 0);
+	@include adaptiv-value("padding-bottom", 10, 5, 0);
+	@include adaptiv-value("padding-left", 10, 5, 0);
+	&::before,
+	&::after {
+		content: "";
+		width: 20px;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		right: 10px;
+		top: 20px;
+		transition: all 0.3s ease-in;
+	}
+	&::after {
+		transform: rotate(-90deg);
+	}
+	&.active {
+		&::after {
+			transform: rotate(0deg);
+		}
 	}
 }
