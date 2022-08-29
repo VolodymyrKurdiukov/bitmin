@@ -1,5 +1,4 @@
 "use strict";
-
 function DynamicAdapt(type) {
 	this.type = type;
 }
@@ -153,6 +152,9 @@ DynamicAdapt.prototype.arraySort = function (arr) {
 
 const da = new DynamicAdapt("max");
 da.init();
+
+//..........................................................................................................................
+
 
 // SPOLLERS
 const spollersArray = document.querySelectorAll('[data-spollers]');
@@ -335,6 +337,8 @@ let _slideToggle = (target, duration = 500) => {
 	}
 }
 
+//..........................................................................................................................
+
 
 const isMobile = {
 	Android: function () {
@@ -362,6 +366,8 @@ const isMobile = {
 			isMobile.Windows());
 	}
 };
+
+//..........................................................................................................................
 
 if (isMobile.any()) {
 	document.body.classList.add('touch');
@@ -405,30 +411,27 @@ if (iconMenu) {
 	});
 }
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-if (menuLinks.length > 0) {
-	menuLinks.forEach(menuLink => {
-		menuLink.addEventListener("click", onMenuLinkClick);
-	});
-	function onMenuLinkClick(e) {
-		const menuLink = e.target;
-		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYoffset - document.querySelector('header').offsetHeight;
+// const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+// if (menuLinks.length > 0) {
+// 	menuLinks.forEach(menuLink => {
+// 		menuLink.addEventListener("click", onMenuLinkClick);
+// 	});
+// 	function onMenuLinkClick(e) {
+// 		const menuLink = e.target;
+// 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+// 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
+// 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYoffset - document.querySelector('header').offsetHeight;
 
-			window.scrollTo({
-				top: gotoBlockValue,
-				behavior: "smooth"
-			});
-			e.preventDefault();
-		}
-	}
-}
+// 			window.scrollTo({
+// 				top: gotoBlockValue,
+// 				behavior: "smooth"
+// 			});
+// 			e.preventDefault();
+// 		}
+// 	}
+// }
 
-
-
-
-
+//..........................................................................................................................
 
 function ibg() {
 	let ibg = document.querySelectorAll(".ibg");
@@ -439,6 +442,9 @@ function ibg() {
 	}
 }
 ibg();
+
+//..........................................................................................................................
+
 
 
 $(document).ready(function () {
@@ -480,9 +486,13 @@ $(document).ready(function () {
 	}).eq(0).addClass("active");
 });
 
+//..........................................................................................................................
+
+
 $(window).scroll(function () {
 	let top = $(document).scrollTop();
-	if (top < 30 || innerWidth < 1120) $(".header").css({ background: 'none', transition: ' all 0.3s ease' });
+	if (top < 30 || innerWidth < 1120)
+		$(".header").css({ background: 'none', transition: ' all 0.3s ease' });
 	else $(".header").css({ background: 'rgba(0, 0, 0, 0.5)' });
 });
 
