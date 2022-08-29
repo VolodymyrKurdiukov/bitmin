@@ -411,26 +411,6 @@ if (iconMenu) {
 	});
 }
 
-// const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-// if (menuLinks.length > 0) {
-// 	menuLinks.forEach(menuLink => {
-// 		menuLink.addEventListener("click", onMenuLinkClick);
-// 	});
-// 	function onMenuLinkClick(e) {
-// 		const menuLink = e.target;
-// 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-// 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-// 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYoffset - document.querySelector('header').offsetHeight;
-
-// 			window.scrollTo({
-// 				top: gotoBlockValue,
-// 				behavior: "smooth"
-// 			});
-// 			e.preventDefault();
-// 		}
-// 	}
-// }
-
 //..........................................................................................................................
 
 function ibg() {
@@ -444,7 +424,27 @@ function ibg() {
 ibg();
 
 //..........................................................................................................................
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			document.querySelectorAll('.menu__link').forEach((link) => {
+				if (link.getAttribute('href').replace('#', '') === entry.target.id) {
+					link.classList.add('active');
+				} else {
+					link.classList.remove('active')
+				}
+			});
+		}
+	});
+}, {
+	threshold: 0.7,
 
+});
+document.querySelectorAll('.section').forEach(
+	(section) => observer.observe(section),
+);
+
+//..........................................................................................................................
 
 
 $(document).ready(function () {
@@ -454,6 +454,14 @@ $(document).ready(function () {
 	// 	dots: true,
 	// 	slidesToScroll: 1,
 	// });
+
+	$("a.menu__link").on("click", function (e) {
+		e.preventDefault();
+		var anchor = $(this).attr('href');
+		$('html, body').stop().animate({
+			scrollTop: $(anchor).offset().top - document.querySelector('header').offsetHeight
+		}, 800);
+	});
 
 	$(".content-price__item-1").not(":first").hide();
 	$(".body-item-price .body-item-price__tab-1").click(function () {
