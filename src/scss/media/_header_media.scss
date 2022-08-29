@@ -199,6 +199,11 @@ body.touch .menu__list > .menu__item.active .menu__arrow {
 		&__link {
 			font-size: 24px;
 			line-height: 260%;
+			&.active{
+				&::before{
+					display: none;
+				}
+			}
 		}
 		&__sublist {
 			position: relative;
