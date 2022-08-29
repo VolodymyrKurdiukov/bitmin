@@ -42,7 +42,6 @@ body.touch .menu-footer__list > .menu-footer__item.active .menu-footer__arrow {
 @media (max-width: 814.98px) {
 	.bottom-footer {
 		flex-direction: column;
-		align-items: center;
 		&__column {
 			flex: 1 1 100%;
 			&:first-child {
@@ -52,13 +51,7 @@ body.touch .menu-footer__list > .menu-footer__item.active .menu-footer__arrow {
 	}
 }
 
-@media (max-width: 575.98px) {
-	.menu-footer {
-		&__list {
-			justify-content: center;
-		}
-	}
-}
+
 @media (max-width: 538px) {
 	.bottom-footer {
 		align-items: stretch;
@@ -68,6 +61,7 @@ body.touch .menu-footer__list > .menu-footer__item.active .menu-footer__arrow {
 		&__column {
 			&:not(:last-child) {
 				@include adaptiv-value("margin-bottom", 30, 15, 0);
+				margin-right: 0;
 			}
 		}
 	}
