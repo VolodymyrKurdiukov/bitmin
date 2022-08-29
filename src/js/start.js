@@ -10,22 +10,22 @@ $(document).ready(function () {
 	//slider
 
 
-function onScroll(event) {
-	var scrollPos = $(document).scrollTop();
-	$('.decor__circle').each(function () {
-		var currLink = $(this);
-		var refElement = $(currLink.attr("href"));
-		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-			$('.decor__circle').removeClass("active");
-			currLink.addClass("active");
-		}
-		else {
-			currLink.removeClass("active");
-		}
-	});
-}
+	function onScroll(event) {
+		var scrollPos = $(document).scrollTop();
+		$('.decor__circle').each(function () {
+			var currLink = $(this);
+			var refElement = $(currLink.attr("href"));
+			if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+				$('.decor__circle').removeClass("active");
+				currLink.addClass("active");
+			}
+			else {
+				currLink.removeClass("active");
+			}
+		});
+	}
 
-$(window).scroll(function () {
+	$(window).scroll(function () {
 		if ($(this).scrollTop() > 3500) {
 			$('.decor').fadeOut();
 		} else {
@@ -56,59 +56,59 @@ $(window).scroll(function () {
 	});
 	new WOW().init();
 });
-	$('.slider__row').slick({
-		// infinite: true,
-		// autoplay: true,
-		// autoplaySpeed: 5000,
-		arrows: true,
-		adaptiveHeight: true,
-		speed: 1200,
-		nextArrow: document.querySelector('.control__arrow-r'),
-		prevArrow: document.querySelector('.control__arrow-l')
-	});
-	$('.trade__row').slick({
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		arrows: true,
-		speed: 1200,
-		slidesToShow: 3,
-		adaptiveHeight: true,
-		prevArrow: document.querySelector('.control-trade__arrow-l'),
-		nextArrow: document.querySelector('.control-trade__arrow-r'),
-		responsive: [
-			{
-				breakpoint: 991.98,
-				settings: {
-					slidesToShow: 2
-				}
-			},
-			{
-				breakpoint: 575.98,
-				settings: {
-					slidesToShow: 1
-				}
+$('.slider__row').slick({
+	// infinite: true,
+	// autoplay: true,
+	// autoplaySpeed: 5000,
+	arrows: true,
+	adaptiveHeight: true,
+	speed: 1200,
+	nextArrow: document.querySelector('.control__arrow-r'),
+	prevArrow: document.querySelector('.control__arrow-l')
+});
+$('.trade__row').slick({
+	infinite: true,
+	autoplay: true,
+	autoplaySpeed: 3000,
+	arrows: true,
+	speed: 1200,
+	slidesToShow: 3,
+	adaptiveHeight: true,
+	prevArrow: document.querySelector('.control-trade__arrow-l'),
+	nextArrow: document.querySelector('.control-trade__arrow-r'),
+	responsive: [
+		{
+			breakpoint: 991.98,
+			settings: {
+				slidesToShow: 2
 			}
-		]
-	});
-	$('.quotes__row').slick({
-		// infinite: true,
-		// autoplay: true,
-		// autoplaySpeed: 3000,
-		arrows: true,
-		adaptiveHeight: true,
-		speed: 1200,
-		nextArrow: document.querySelector('.control-quotes__decor'),
-		prevArrow: false
-	});
+		},
+		{
+			breakpoint: 575.98,
+			settings: {
+				slidesToShow: 1
+			}
+		}
+	]
+});
+$('.quotes__row').slick({
+	// infinite: true,
+	// autoplay: true,
+	// autoplaySpeed: 3000,
+	arrows: true,
+	adaptiveHeight: true,
+	speed: 1200,
+	nextArrow: document.querySelector('.control-quotes__decor'),
+	prevArrow: false
+});
 //=============================================================================================================
 //animate scroll
 
-	$("a[href^='#']").click(function () {
-		const _href = $(this).attr("href");
-		$("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
-		return false;
-	});
+$("a[href^='#']").click(function () {
+	const _href = $(this).attr("href");
+	$("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+	return false;
+});
 
 	// $("a").on('click', function (event) {
 	// 	if (this.hash !== "") {
@@ -200,77 +200,77 @@ counter.forEach((item, i) => {
 
 //modal
 
-	$('[data-modal=consultation]').on('click', function () {
-		$('.overlay, #consultation').fadeIn('slow');
-	});
-	$('.modal__close').on('click', function () {
-		$('.overlay, #consultation, #order, #thanks').fadeOut('slow');
-	});
+$('[data-modal=consultation]').on('click', function () {
+	$('.overlay, #consultation').fadeIn('slow');
+});
+$('.modal__close').on('click', function () {
+	$('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+});
 
-	$('.button_mini').each(function (i) {
-		$(this).on('click', function () {
-			$('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
-			$('.overlay, #order').fadeIn('slow');
-		})
-	});
+$('.button_mini').each(function (i) {
+	$(this).on('click', function () {
+		$('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+		$('.overlay, #order').fadeIn('slow');
+	})
+});
 
-	function validateForms(form) {
-		$(form).validate({
-			rules: {
-				name: {
-					required: true,
-					minlength: 5
-				},
-				phone: "required",
-				email: {
-					required: true,
-					email: true
-				}
+function validateForms(form) {
+	$(form).validate({
+		rules: {
+			name: {
+				required: true,
+				minlength: 5
 			},
-			messages: {
-				name: {
-					required: "Пожалуйста, введите свое имя",
-					minlength: jQuery.validator.format("Введите {0} символов!")
-				},
-				phone: "Пожалуйста, введите свой телефон",
-				email: {
-					required: "Пожалуйста, введите свою почту",
-					email: "Неправильно введен аддрес почты"
-				}
+			phone: "required",
+			email: {
+				required: true,
+				email: true
 			}
-		});
-	};
-	validateForms('#consultation-form');
-	validateForms('#consultation form');
-	validateForms('#order form');
-
-	$('input[name=phone]').mask("+7 (999) 999-9999");
-
-	$('form').submit(function (e) {
-		e.preventDefault();
-
-		if (!$(this).valid()) {
-			return;
-		}
-
-		$.ajax({
-			type: "POST",
-			url: "mailer/smart.php",
-			data: $(this).serialize()
-		}).done(function () {
-			$(this).find("input").val("");
-			$('#consultation, #order').fadeOut();
-			$('.overlay, #thanks').fadeIn('slow');
-
-			$('form').trigger('reset');
-		});
-		return false;
-	});
-
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 1000) {
-			$('.pageup').fadeIn();
-		} else {
-			$('.pageup').fadeOut();
+		},
+		messages: {
+			name: {
+				required: "Пожалуйста, введите свое имя",
+				minlength: jQuery.validator.format("Введите {0} символов!")
+			},
+			phone: "Пожалуйста, введите свой телефон",
+			email: {
+				required: "Пожалуйста, введите свою почту",
+				email: "Неправильно введен аддрес почты"
+			}
 		}
 	});
+};
+validateForms('#consultation-form');
+validateForms('#consultation form');
+validateForms('#order form');
+
+$('input[name=phone]').mask("+7 (999) 999-9999");
+
+$('form').submit(function (e) {
+	e.preventDefault();
+
+	if (!$(this).valid()) {
+		return;
+	}
+
+	$.ajax({
+		type: "POST",
+		url: "mailer/smart.php",
+		data: $(this).serialize()
+	}).done(function () {
+		$(this).find("input").val("");
+		$('#consultation, #order').fadeOut();
+		$('.overlay, #thanks').fadeIn('slow');
+
+		$('form').trigger('reset');
+	});
+	return false;
+});
+
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 1000) {
+		$('.pageup').fadeIn();
+	} else {
+		$('.pageup').fadeOut();
+	}
+});
